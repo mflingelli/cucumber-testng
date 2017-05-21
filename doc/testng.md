@@ -15,8 +15,7 @@ You have to add the following Maven dependencies:
 </dependency>
 
 <dependency>
-
-<groupId>info.cukes</groupId>
+  <groupId>info.cukes</groupId>
   <artifactId>cucumber-java</artifactId>
   <version>1.2.5</version>
   <scope>test</scope>
@@ -55,7 +54,7 @@ The Maven plugin *Failsave* is used for processing the tests, therefore the Sure
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <configuration>
-        <skipTests>true</skipTests>
+      <skipTests>true</skipTests>
     </configuration>
 </plugin>
 ```
