@@ -8,6 +8,27 @@
     <artifactId>cucumber-testng</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <developers>
+        <developer>
+            <name>Markus Flingelli</name>
+            <email>markus.flingelli@gmx.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>scm:git@github.com:mflingelli/cucumber-testng.git</url>
+        <connection>scm:git@github.com:mflingelli/cucumber-testng.git</connection>
+        <developerConnection>scm:git@github.com:mflingelli/cucumber-testng.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/mflingelli/cucumber-testng/issues</url>
+    </issueManagement>
+
+    <url>https://github.com/mflingelli/cucumber-testng</url>
+
     <build>
         <plugins>
             <plugin>
