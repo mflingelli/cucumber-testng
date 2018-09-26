@@ -40,4 +40,15 @@ public class Arithmetic {
         }
         return result;
     }
+
+    public int gaussSum(int x) {
+        return x * (x+1) / 2;
+    }
+
+    public int divide(int x, int y) throws Throwable {
+        if (y == 0) {
+            throw new Throwable("Division by 0 not defined");
+        }
+        return x / y;
+    }
 }
