@@ -8,30 +8,16 @@ You have to add the following Maven dependencies:
 
 ```
 <dependency>
-  <groupId>info.cukes</groupId>
-  <artifactId>cucumber-jvm-deps</artifactId>
-  <version>1.0.5</version>
-  <scope>test</scope>
-</dependency>
-
-<dependency>
-  <groupId>info.cukes</groupId>
+  <groupId>io.cucumber</groupId>
   <artifactId>cucumber-java</artifactId>
-  <version>1.2.5</version>
-  <scope>test</scope>
+  <version>4.2.4</version>
 </dependency>
-
+  
 <dependency>
-  <groupId>info.cukes</groupId>
+  <groupId>io.cucumber</groupId>
   <artifactId>cucumber-testng</artifactId>
-  <version>1.2.5</version>
+  <version>4.2.4</version>
   <scope>test</scope>
-  <exclusions>
-    <exclusion>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </exclusion>
-  </exclusions>
 </dependency>
 ```
 
@@ -41,7 +27,7 @@ If you want to product reports which is described in the section **Report** you 
 <dependency>
   <groupId>net.masterthought</groupId>
   <artifactId>cucumber-reporting</artifactId>
-  <version>3.5.1</version>
+  <version>4.4.0</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -138,7 +124,7 @@ You can used it by adding the plugin to the build tag in the `pom.xml` file.
 <plugin>
   <groupId>net.masterthought</groupId>
   <artifactId>maven-cucumber-reporting</artifactId>
-  <version>3.5.0</version>
+  <version>4.4.0</version>
   <executions>
     <execution>
       <id>execution</id>
@@ -148,8 +134,10 @@ You can used it by adding the plugin to the build tag in the `pom.xml` file.
       </goals>
       <configuration>
         <projectName>cucumber</projectName>
-        <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-        <cucumberOutput>${project.build.directory}/cucumber-report.json</cucumberOutput>
+        <outputDirectory>${project.build.directory}/</outputDirectory>
+        <jsonFiles>
+          <param>**/*.json</param>
+        </jsonFiles>
       </configuration>
     </execution>
   </executions>
