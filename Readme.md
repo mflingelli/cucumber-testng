@@ -1,6 +1,6 @@
 # Cucumber with TestNG
 
-[![Build Status](https://api.travis-ci.org/mflingelli/cucumber-testng.svg)](https://travis-ci.org/mflingelli/cucumber-testng)
+![Build-Status](https://github.com/mflingelli/cucumber-testng/actions/workflows/ci.yml/badge.svg)
 
 
 ## IDE
