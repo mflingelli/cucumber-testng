@@ -103,13 +103,18 @@ You have to add the annotation `@CucumberOptions` to the class.
 Options:
 * The option *features* specifies the folder in which the features files are stored.
 * The option *glue* specifies the Java package in which the step files are stored.
-* The option *plugin* defines the format of the result file.
+* The option *plugin* defines the format of the result file. There can be specified more than one format.
 
 ```
 @CucumberOptions(
     features = "src/test/features/math",
     glue = "de.blackned.training.cucumber",
     plugin = "json:target/cucumber-report.json")
+    plugin = {
+        "json:target/cucumber-report.json",
+        "junit:target/cucumber-junit-report.xml",
+        "testng:target/cucumber-testng-report.xml"
+    })
 public class ArithmeticAcceptanceTest extends AbstractTestNGCucumberTests {
 }
 ```

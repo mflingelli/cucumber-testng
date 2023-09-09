@@ -6,10 +6,14 @@ You have to install the Gherkins plugins in IntelliJ in order to have syntax hig
 
 Click on the link **Install plugins** in order to have syntax hightlightning.
 
-You can choose both plugins and you can finish the installation.
+You can choose both plugins, and you can finish the installation.
 
 ![Installation of the Gherkin plugins](intellij_install_gherkin_plugins.png)
 
 When then installation is finished you must restart IntelliJ. You have syntax highlightning from now on.
 
-![Installation of the Gherking plugins is complete](intellij_with_cucumber_plugins.png)
+![Installation of the Gherking plugins is complete](intellij_with_gherkin_plugin.png)
+
+If you install the Cucumber plugin then you'll be able to run and debug the scenarios directy in the featurre file.
+
+![Run scenario from feature file](intellij_with_cucumber_plugin.png)
