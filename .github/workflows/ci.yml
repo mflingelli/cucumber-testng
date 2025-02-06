@@ -3,8 +3,11 @@ name: Java CI
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 8
@@ -13,8 +16,28 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build and run tests
-        run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
-      - name: Publish test report
-        uses: starburstdata/action-testng-report@v1
+        run: mvn test --batch-mode
+        continue-on-error: true
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: runner.os == 'Linux'
+        continue-on-error: true
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ref: gh-pages
+          path: gh-pages
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: runner.os == 'Linux'
+        id: allure-report
+        with:
+          allure_results: target/allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+      - name: Deploy report to Github Pages
+        if: runner.os == 'Linux'
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
