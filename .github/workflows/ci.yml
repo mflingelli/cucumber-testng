@@ -16,7 +16,7 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build and run tests
-        run: mvn test --batch-mode
+        run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
         continue-on-error: true
       - name: Get Allure history
         uses: actions/checkout@v2

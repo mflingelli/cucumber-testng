@@ -9,3 +9,7 @@
 ## Unit tests
 
 * [Setup unit tests with TestNG](doc/testng.md)
+
+## Test results
+
+The test results are uploaded to GitHub: [https://mflingelli.github.io/cucumber-testng](https://mflingelli.github.io/cucumber-testng)
